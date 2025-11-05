@@ -7,13 +7,17 @@ public class Solution {
         sc.nextLine(); 
         List<String> students = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            students.add(sc.nextLine());
+            students.add(sc.next());
         }
-        Set<String> uniqueSet = new HashSet<>(students);
-        List<String> uniqueList = new ArrayList<>(uniqueSet);
-        Collections.sort(uniqueList);
-        for (String name : uniqueList) {
-            System.out.println(name);
+        String remove=sc.next();
+        students.removeAll(Collections.singleton(remove));
+        if(students.isEmpty()){
+            System.out.println("cart is empty");
+        }
+        else{
+            for(String x:students){
+                System.out.println(x);
+            }
         }
         sc.close();
     }
